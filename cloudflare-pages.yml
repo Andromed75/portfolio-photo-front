@@ -1,0 +1,7 @@
+# cloudflare-pages.yml
+name: portfolio-photo
+framework: angular
+build:
+  command: npm run build
+  directory: dist/portfolio-photo
+  environment: production
