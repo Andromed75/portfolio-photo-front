@@ -8,7 +8,6 @@ $transition-fast: all 0.2s ease;
 $primary-bg: rgba(255, 255, 255, 0.95);
 $scrolled-bg: rgba(255, 255, 255, 0.98);
 $text-color: #2d3748;
-$text-hover: #667eea;
 $overlay-bg: rgba(0, 0, 0, 0.5);
 
 .navbar {
@@ -19,7 +18,6 @@ $overlay-bg: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   background: $primary-bg;
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: $transition-smooth;
 
   &.scrolled {
@@ -30,7 +28,9 @@ $overlay-bg: rgba(0, 0, 0, 0.5);
 
 .navbar-container {
   max-width: 1400px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: 4px;  
   padding: 0 2rem;
   height: $navbar-height;
   display: flex;
@@ -38,74 +38,6 @@ $overlay-bg: rgba(0, 0, 0, 0.5);
   align-items: center;
 }
 
-// Logo
-.logo {
-  text-decoration: none;
-  z-index: 1001;
-
-  .logo-text {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: $text-color;
-    letter-spacing: 0.5px;
-    transition: $transition-fast;
-
-    &:hover {
-      color: $text-hover;
-    }
-  }
-}
-
-// Desktop Menu
-.desktop-menu {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  @media (max-width: $breakpoint-mobile) {
-    display: none;
-  }
-}
-
-.nav-link {
-  position: relative;
-  text-decoration: none;
-  color: $text-color;
-  font-size: 1rem;
-  font-weight: 400;
-  padding: 0.5rem 0;
-  transition: $transition-fast;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: $text-hover;
-    transition: width 0.3s ease;
-  }
-
-  &:hover {
-    color: $text-hover;
-
-    &::after {
-      width: 100%;
-    }
-  }
-
-  &.active {
-    color: $text-hover;
-    font-weight: 500;
-
-    &::after {
-      width: 100%;
-    }
-  }
-}
 
 // Mobile Menu Toggle (Hamburger)
 .menu-toggle {
@@ -123,10 +55,6 @@ $overlay-bg: rgba(0, 0, 0, 0.5);
 
   @media (max-width: $breakpoint-mobile) {
     display: flex;
-  }
-
-  &:hover .hamburger-line {
-    background: $text-hover;
   }
 }
 
@@ -165,7 +93,6 @@ $overlay-bg: rgba(0, 0, 0, 0.5);
   background: white;
   transform: translateX(100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
 
   @media (min-width: $breakpoint-mobile + 1px) {
@@ -210,14 +137,10 @@ $overlay-bg: rgba(0, 0, 0, 0.5);
 
   &:hover {
     background: rgba(102, 126, 234, 0.05);
-    border-left-color: $text-hover;
-    color: $text-hover;
   }
 
   &.active {
     background: rgba(102, 126, 234, 0.1);
-    border-left-color: $text-hover;
-    color: $text-hover;
     font-weight: 500;
   }
 }
@@ -249,7 +172,6 @@ $overlay-bg: rgba(0, 0, 0, 0.5);
 @media (max-width: $breakpoint-mobile) {
   .navbar-container {
     padding: 0 1.5rem;
-    color: blue;
   }
 
   .logo .logo-text {

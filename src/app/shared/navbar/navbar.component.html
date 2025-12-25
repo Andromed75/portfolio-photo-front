@@ -2,20 +2,6 @@
 
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="navbar-container">
-    <!-- Logo -->
-    <a routerLink="/" class="logo" (click)="closeMenu()"></a>
-
-    <!-- Desktop Menu -->
-    <ul class="nav-links desktop-menu">
-      <li *ngFor="let link of navLinks">
-        <a 
-          [routerLink]="link.route" 
-          routerLinkActive="active"
-          class="nav-link">
-          {{ link.label }}
-        </a>
-      </li>
-    </ul>
 
     <!-- Mobile Menu Toggle -->
     <button 
