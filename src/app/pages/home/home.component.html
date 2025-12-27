@@ -1,10 +1,15 @@
 <div class="Container">
     <div class="row g-0">
         <div class="col-12 col-md-6 wrapper-name">
-            <p>Arthur-Émile de DONNO</p>
+            <!-- <p>Arthur-Émile de DONNO</p> -->
+            <p class="typing-text">
+                <span *ngFor="let letter of letters; let i = index" [style.animationDelay]="i * 0.06 + 's'">
+                    {{ letter }}
+                </span>
+            </p>
         </div>
-        <div class="col-12 col-md-6">
-            <img style="width: 80%; height: 100%;" src="https://cdn.arthurdedonno.com/photo/DSCF6251.webp" alt="">
+        <div class="col-12 col-md-6 wrapper-photo-home">
+            <img style="height: 100%; " src="https://cdn.arthurdedonno.com/photo/DSCF6251.webp" alt="">
         </div>
     </div>
 </div>
