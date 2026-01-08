@@ -16,7 +16,7 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" [class.open]="isMenuOpen">
+  <div class="mobile-menu" [class.open]="isMenuOpen" *ngIf="isMenuOpen"> 
     <ul class="nav-links-mobile">
       <li *ngFor="let link of navLinks; let i = index" 
           [style.animation-delay.ms]="i * 50">

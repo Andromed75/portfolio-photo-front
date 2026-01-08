@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit{
 isMenuOpen = false;
 
 isScrolled = false;
+isMobile = false;
 
   navLinks = [
     { label: 'Galeries', route: '/galleries' },
@@ -23,9 +24,16 @@ isScrolled = false;
   ];
 
 
-constructor(public device: DeviceService) {}
+constructor(public device: DeviceService) {
+
+}
 
   ngOnInit() {
+    this.device.isMobile$.subscribe(x => {
+      this.isMobile = x;
+      console.log(this.isMobile);
+      
+    });
 
   }
 
